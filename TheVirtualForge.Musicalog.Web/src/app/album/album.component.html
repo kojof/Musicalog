@@ -1,0 +1,27 @@
+
+<div class="jumbotron">
+   
+    <p class="lead">This is your one stop shop to view all your favourite artists</p>
+</div>
+
+
+ <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-4">
+    <button class="btn btn-sm btn-success button" (click)="AddAlbum()">Add Album</button>
+  
+</div>
+<div class="row">
+    
+    <div class="col-md-12">
+
+        <ag-grid-angular class="ag-theme-blue" style="width: 100%; height: 300px;"
+                         [rowData]="albums"
+                         (gridReady)="onGridReady($event)"
+                         [frameworkComponents]="frameworkComponents"
+                         [pagination]="true"
+                         [gridOptions]="gridOptions"
+                         [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </div>
+</div>

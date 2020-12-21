@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8">
+      <h1><span class="badge badge-dark" id="header">Create Album</span></h1>
+      <hr>
+      <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Name">Album Name:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Name">
+            <div *ngIf="submitted && albumForm.controls.Name.errors" class="error">
+              <div *ngIf="albumForm.controls.Name.errors.required">Album name is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Artist">Artist:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Artist">
+            <div *ngIf="submitted && albumForm.controls.Artist.errors" class="error">
+              <div *ngIf="albumForm.controls.Artist.errors.required">Artist is required</div>
+            </div>
+          </div>
+        </div>
+
+         <div class="row">
+          <div class="col-md-4">
+            <label for="Label">Label:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Label">
+            <div *ngIf="submitted && albumForm.controls.Label.errors" class="error">
+              <div *ngIf="albumForm.controls.Label.errors.required">Label is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Stock">Stock:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Stock">
+            <div *ngIf="submitted && albumForm.controls.Stock.errors" class="error">
+              <div *ngIf="albumForm.controls.Stock.errors.required">Stock is required</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4">           
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;
+            <input type="button" class="btn btn-warning" (click)="Cancel()" value="Cancel">
+        </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
